@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap');
+  
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins'
+}
+
+.container{
+    min-height: 100vh;
+    width: 100%;
+    background-color: #D9F9F4;
+}
+
+.about-wrapper{
+    padding: 5% 8%;
+}
+
+.About-Us{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    color: #18978F;
+    font-size: 5em;
+    -webkit-text-stroke-width: 4px;
+    -webkit-text-stroke-color: #18978F;
+    letter-spacing: 4px;
+    position: relative;
+    margin-bottom: 40px;
+    overflow: hidden;
+}
+
+h1:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    width: 0;
+    background-color: #18978F;
+    transition: width 0.5s ease; /* Transition width property */
+}
+
+h1:hover:after {
+    width: 100%;
+}
+
+
+
+.cards{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 30px;
+    margin-top: 80px;   
+}
+
+.card{
+    height: 350px;
+    width: 370px;
+    background-color:#fff;
+    padding: 3% 8%;
+    border: 5px solid #D9F9F4 ;
+    border-radius: 50px;
+    transition: .6s;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.card:after{
+    content:"";
+    position:absolute;
+    top: 150%;
+    left: -200px;
+    width: 120%;
+    transform: rotate(50deg);
+    background-color: #fff;
+    height: 18px;
+    filter: blur(30px);
+    opacity: 0.5;
+    transition: 1s;
+}
+
+.card:hover:after{
+    width: 225%;
+    top: -100%;
+
+}
+
+.card i{
+    color: #54BAB9;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 4.8rem;
+}
+
+.card h2{
+    text-align: center;
+    color: #18978F;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.card p{
+    text-align: center;
+    width: 100%;
+    margin: 12px 0;
+    color: black;  
+}
+
+.card:hover{
+    background-color: #18978F;
+    transform: translateY(-8px);
+    border-color: #18978F;
+}
+
+.card:hover i{
+    color: #E9DAC1;
+}
+
+.card:hover h2{
+    color: #E9DAC1;
+}
+
+.card:hover p{
+    color:#E9DAC1;
+}
+
+@media screen and (max-width: 1200px){
+    .cards{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media screen and (max-width: 900px){
+    .cards{
+        grid-template-columns: repeat(1,1fr);
+    }
+    h1{
+        font-size: 3.5rem;
+    }
+}
+
+

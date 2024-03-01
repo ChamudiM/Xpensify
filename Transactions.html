@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buddge | Transactions</title>
+    <link rel="stylesheet" href="style-transactions.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+</head>
+<body>
+    <div class="strip-one"> <!--1st flex element of body-->
+    
+    </div>
+
+    <div class="header"> <!--2nd flex element of body-->
+        <div class = "navbar">
+            <div class = "icon">
+              <!--<img class = "logo" src="resources\logo.png">-->
+              <a href="#" class="logo"><i class='bx bxs-bank'></i>Xpen$ify</a>
+            </div>
+
+            <div class="menu">
+                <ul>
+                    <li><a href="Dashboard.html" class="inactive">Dashboard</a></li>
+                    <li><a href="Transactions.html" class="active">Transactions</a></li>
+                    <li><a href="budget.html" class="inactive">Budgets</a></li>
+                  </ul>
+            </div>
+
+            <div class="account">
+                <h4 id="display">Username</h4>
+                <a href="Login.html"> <label class="logout">
+                <div class="container1">
+                    <img id="user-icon" src="resources\user-circle-solid-120.png"/>
+                </div>
+                </label> </a>
+            </div>
+        </div>
+    </div>
+
+    <main>  <!--3rd flex element of body-->
+        <section class="left">
+            <header>
+                <div>
+                    <h5>Total Balance</h5>
+                    <span id="balance">$0.00</span>
+                </div>
+                <div>
+                    <h5>Income</h5>
+                    <span id="income">$0.00</span>
+                </div>
+                <div>
+                    <h5>Expense</h5>
+                    <span id="expense">$0.00</span>
+                </div>
+            </header>
+
+            <section>
+                <h3 id="T">Transactions</h3>
+                <ul id="transactionList"></ul>
+                <div id="status"></div>
+            </section>
+        </section>
+
+        <section class="right">
+            <h3>Add Transaction</h3>
+
+            <form id="transactionForm">
+                <div>
+                    <label for="type">
+                        <input type="checkbox" name="type" id="type" />
+                        <div class="option">
+                            <span>Expense</span>
+                            <span>Income</span>
+                        </div>
+                    </label>
+                </div>
+                <div>
+                    <label for="name">Name</label>
+                    <input type="text" name="name" required/>
+                </div>
+                <div>
+                    <label for="amount">Amount</label>
+                    <input type="number" name="amount" value="" min="0.01" step="0.01" required/>
+                </div>
+                <div>
+                    <label for="date">Date</label>
+                    <input type="date" name="date" required />
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+
+
+    </main>
+
+    <div class="expensify-monthly-report">
+        <section class="report-section">
+            <h2 class="section-title">Monthly Report - February 2024</h2>
+            <div class="report-container">
+                <div class="incomes">
+                    <h3 class="subsection-title">Incomes</h3>
+                    <table class="transaction-table">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Description</th>
+                                <th>Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2024-02-05</td>
+                                <td>Salary Deposit</td>
+                                <td>+$5000.00</td>
+                            </tr>
+                            <tr>
+                                <td>2024-02-12</td>
+                                <td>Freelance Project Payment</td>
+                                <td>+$800.00</td>
+                            </tr>
+                            <tr>
+                                <td>2024-02-20</td>
+                                <td>Investment Dividends</td>
+                                <td>+$200.00</td>
+                            </tr>
+                            <!-- Add more income items as needed -->
+                        </tbody>
+                    </table>
+                    <p class="total-amount">Total Income: +$6000.00</p>
+                </div>
+                <hr class="line-separator1">
+                <div class="expenditures">
+                    <h3 class="subsection-title">Expenditures</h3>
+                    <table class="transaction-table">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Description</th>
+                                <th>Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2024-02-15</td>
+                                <td>Online Purchase - Electronics</td>
+                                <td>-$350.00</td>
+                            </tr>
+                            <tr>
+                                <td>2024-02-10</td>
+                                <td>Grocery Shopping</td>
+                                <td>-$120.00</td>
+                            </tr>
+                            <tr>
+                                <td>2024-02-03</td>
+                                <td>Medical Expenses</td>
+                                <td>-$80.00</td>
+                            </tr>
+                            <tr>
+                                <td>2024-02-18</td>
+                                <td>Dining Out</td>
+                                <td>-$60.00</td>
+                            </tr>
+                            <tr>
+                                <td>2024-02-25</td>
+                                <td>Utility Bills</td>
+                                <td>-$150.00</td>
+                            </tr>
+                            <!-- Add more expenditure items as needed -->
+                        </tbody>
+                    </table>
+                    <p class="total-amount">Total Expenditure: -$760.00</p>
+                </div>
+            </div>
+            <hr class="line-separator">
+            <div class="final-balance">
+                <h3 class="subsection-title">Final Balance</h3>
+                <p class="balance-amount">+$5240.00</p>
+            </div>
+        </section>
+    </div>
+    <div class="footer">
+        <div class="footerContainer">
+            <div class="socialIcons">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-google-plus"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+            <div class="footerNav">
+                <ul>
+                    <li><a href="Home.html">Home</a></li>
+                    <li><a href="Login.html">Login</a></li>
+                    <li><a href="landing.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>  
+                    <li><a href="#">Our Team</a></li> 
+                </ul>
+            </div>
+            <div class="footerBottom">
+                <p>Copyright &copy;2024 Xpensify - All rights reserved</p>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

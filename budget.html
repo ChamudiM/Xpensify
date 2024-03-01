@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget</title>
+    <link rel="stylesheet" href="budget-style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+   <div class="strip one"> <!--1st flex element of body-->
+    </div>
+    
+    <div class="header"> <!--2nd flex element of body-->
+        <div class = "navbar">
+            <div class = "icon">
+              <!--<img class = "logo" src="resources\logo.png">-->
+              <a href="#" class="logo"><i class='bx bxs-bank'></i>Xpen$ify</a>
+            </div>
+
+            <div class="menu">
+                <ul>
+                    <li><a href="Dashboard.html" class="inactive">Dashboard</a></li>
+                    <li><a href="Transactions.html" class="inactive">Transactions</a></li>
+                    <li><a href="budget.html" class="active">Budgets</a></li>
+                  </ul>
+            </div>
+
+            <div class="account">
+                <h4 id="display">Username</h4>
+                <a href="Login.html"> <label class="logout">
+                    <div class="container1">
+                        <img id="user-icon" src="resources\user-circle-solid-120.png"/>
+                    </div>
+                    </label> </a>
+            </div>
+        </div>
+    </div>
+    
+    <section id="content">
+        <section id="black">
+            <h4>Your Monthly Summary</h4>
+            <i class="fa fa-arrow-down" aria-hidden="true"></i>
+            <ul>
+                <div class="expense">
+                    <li>Food and Beverages </li>
+                    <li>700$</li>
+                </div>
+                <div class="expense">
+                    <li>Medicine</li>
+                    <li>60$</li>
+                </div>
+                <div class="expense">
+                    <li>Transportation</li>
+                    <li>400$</li>
+                </div>
+                <div class="expense">
+                    <li>Grocery</li>
+                    <li>200$</li>
+                </div>
+              </ul>
+        </section>
+        <section id="red">
+            <div class="inbox">
+                <div class="title">
+                    <i class="fa fa-line-chart" aria-hidden="true"></i>
+                    <h1>MyBudget</h1>
+                    <h4>Your Financial Pulse at a Glance!</h4>
+                </div>
+                <div class="add-budget" style="text-align: center;">
+                    <p>Add New Budget</p>
+                    <div class="cat-amount">
+                        <select placeholder="Choose Category" id="category-select">
+                            <option value="" disabled selected>Choose Category</option>
+                            <option value="F&B">Food & Beverage</option>
+                            <option value="Rent">Rent</option>
+                            <option value="Transport">Transport</option>
+                        </select>
+                        <input id="amount" type="number" placeholder="Enter $Budget">
+                    </div>   
+                </div>
+        
+                
+
+            </div>
+        </section>
+
+        <section id="blue">
+            <div class="first-two">
+                <div class="food-chart">
+                    <canvas id="food"></canvas>
+                    <h5>Food</h5>
+                </div>
+                <div class="medicine-chart">
+                    <canvas id="medicine"></canvas>
+                    <h5>Medicine</h5>
+                </div>
+            </div>
+            <div class="second-two">
+                <div class="transport-chart">
+                    <canvas id="transport"></canvas>
+                    <h5>Transport</h5>
+                </div>
+                <div class="grocery-chart">
+                    <canvas id="grocery"></canvas>
+                    <h5>Grocery</h5>
+                </div>
+            </div>       
+    
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+           
+        </section>
+    </section>
+
+    <div class="expensify-budget">
+        <!-- Past Month's Expenses Section -->
+        <section class="past-expenses">
+        <div class="title">
+            <h2>Summary of Last 6 months</h2>
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search by month...">
+                <button onclick="searchFunction()" id="searchButton"><i class="fas fa-search"></i></button>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Month</th>
+                        <th>Year</th>
+                        <th>Food</th>
+                        <th>Medicine</th>
+                        <th>Transportation</th>
+                        <th>Grocery</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>January</td>
+                        <td>2023</td>
+                        <td>$250</td>
+                        <td>$80</td>
+                        <td>$120</td>
+                        <td>$200</td>
+                    </tr>
+                    <tr>
+                        <td>February</td>
+                        <td>2023</td>
+                        <td>$230</td>
+                        <td>$90</td>
+                        <td>$110</td>
+                        <td>$180</td>
+                    </tr>
+                    <tr>
+                        <td>March</td>
+                        <td>2023</td>
+                        <td>$270</td>
+                        <td>$70</td>
+                        <td>$130</td>
+                        <td>$220</td>
+                    </tr>
+                    <tr>
+                        <td>April</td>
+                        <td>2023</td>
+                        <td>$200</td>
+                        <td>$100</td>
+                        <td>$150</td>
+                        <td>$250</td>
+                    </tr>
+                    <tr>
+                        <td>May</td>
+                        <td>2023</td>
+                        <td>$220</td>
+                        <td>$85</td>
+                        <td>$140</td>
+                        <td>$190</td>
+                    </tr>
+                    <tr>
+                        <td>June</td>
+                        <td>2023</td>
+                        <td>$260</td>
+                        <td>$75</td>
+                        <td>$100</td>
+                        <td>$210</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+    <div class="footer">
+        <div class="footerContainer">
+            <div class="socialIcons">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-google-plus"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+            <div class="footerNav">
+                <ul>
+                    <li><a href="Home.html">Home</a></li>
+                    <li><a href="Login.html">Login</a></li>
+                    <li><a href="landing.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>  
+                    <li><a href="#">Our Team</a></li> 
+                </ul>
+            </div>
+            <div class="footerBottom">
+                <p>Copyright &copy;2024 Xpensify - All rights reserved</p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        const foodCtx = document.getElementById('food').getContext('2d');
+
+        new Chart(foodCtx, {
+            type: 'doughnut',
+            data: {
+                labels: null,
+                datasets: [{
+                    label: '$',
+                    data: [80, 20],
+                    backgroundColor: ['rgba(233, 218, 193,0.7)', 'rgba(84, 186, 185, 0.7)', 'rgba(255, 206, 86, 0.7)'],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    x: {
+                        display:false,
+                        grid: {
+                            display: false
+                        }
+                    },
+                    y: {
+                        display:false,
+                        ticks: {
+                            callback: function(value, index, values) {
+                                // Display only specific labels
+                                if (value % 30 === 0 || value === 0) {
+                                    return value;
+                                }
+                                        }
+                             },
+            
+                        grid: {
+                            display: false
+                        }
+                    }
+                }
+            }
+        });
+
+        const medicineCtx = document.getElementById('medicine').getContext('2d');
+
+        new Chart(medicineCtx, {
+            type: 'doughnut',
+            data: {
+                labels: null,
+                datasets: [{
+                    label: '$',
+                    data: [50, 50],
+                    backgroundColor: ['rgba(233, 218, 193,0.7)', 'rgba(84, 186, 185, 0.7)', 'rgba(255, 206, 86, 0.7)'],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    x: {
+                        display:false,
+                        grid: {
+                            display: false
+                        }
+                    },
+                    y: {
+                        display:false,
+                        ticks: {
+                            callback: function(value, index, values) {
+                                // Display only specific labels
+                                if (value % 30 === 0 || value === 0) {
+                                    return value;
+                                }
+                                        }
+                             },
+            
+                        grid: {
+                            display: false
+                        }
+                    }
+                }
+            }
+        });
+        const transportCtx = document.getElementById('transport').getContext('2d');
+
+        new Chart(transportCtx, {
+            type: 'doughnut',
+            data: {
+                labels: null,
+                datasets: [{
+                    label: '$',
+                    data: [30, 70],
+                    backgroundColor: ['rgba(233, 218, 193,0.7)', 'rgba(84, 186, 185, 0.7)', 'rgba(255, 206, 86, 0.7)'],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    x: {
+                        display:false,
+                        grid: {
+                            display: false
+                        }
+                    },
+                    y: {
+                        display:false,
+                        ticks: {
+                            callback: function(value, index, values) {
+                                // Display only specific labels
+                                if (value % 30 === 0 || value === 0) {
+                                    return value;
+                                }
+                                        }
+                             },
+            
+                        grid: {
+                            display: false
+                        }
+                    }
+                }
+            }
+        });
+
+        const groceryCtx = document.getElementById('grocery').getContext('2d');
+
+        new Chart(groceryCtx, {
+            type: 'doughnut',
+            data: {
+                labels: null,
+                datasets: [{
+                    label: '$',
+                    data: [40,60],
+                    backgroundColor: ['rgba(233, 218, 193,0.7)', 'rgba(84, 186, 185, 0.7)', 'rgba(255, 206, 86, 0.7)'],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    x: {
+                        display:false,
+                        grid: {
+                            display: false
+                        }
+                    },
+                    y: {
+                        display:false,
+                        ticks: {
+                            callback: function(value, index, values) {
+                                // Display only specific labels
+                                if (value % 30 === 0 || value === 0) {
+                                    return value;
+                                }
+                                        }
+                             },
+            
+                        grid: {
+                            display: false
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjV"></script>
+</body>
+    
+    
+
+</html>
